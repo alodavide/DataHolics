@@ -4,7 +4,7 @@
 @Config =
 
 	# Basic Details
-	name: 'My App'
+	name: 'Survey Central'
 	title: ->
 			TAPi18n.__ 'configTitle'
 	subtitle: ->
@@ -27,30 +27,24 @@
 	dateFormat: 'D/M/YYYY'
 
 	# Meta / Extenrnal content
-	privacyUrl: 'http://meteorfactory.io'
-	termsUrl: 'http://meteorfactory.io'
+	privacyUrl: 'https://github.com/alodavide/DataHolics'
+	termsUrl: 'https://github.com/alodavide/DataHolics'
 
 	# For email footers
 	legal:
-		address: 'Jessnerstrasse 18, 12047 Berlin'
-		name: 'Meteor Factory'
-		url: 'http://benjaminpeterjones.com'
+		address: 'Campus Biotech'
+		name: 'DataHolics'
+		url: 'https://github.com/alodavide/DataHolics'
 
-	about: 'http://meteorfactory.io'
-	blog: 'http://learn.meteorfactory.io'
+	about: 'https://github.com/alodavide/DataHolics'
+	blog: 'https://github.com/alodavide/DataHolics'
 
 	socialMedia:
-		facebook:
-			url: 'http://facebook.com/benjaminpeterjones'
-			icon: 'facebook'
-		twitter:
-			url: 'http://twitter.com/BenPeterJones'
-			icon: 'twitter'
 		github:
-			url: 'http://github.com/yogiben'
+			url: 'https://github.com/alodavide/DataHolics'
 			icon: 'github'
 		info:
-			url: 'http://meteorfactory.io'
+			url: 'https://github.com/alodavide/DataHolics'
 			icon: 'link'
 
 	#Routes
