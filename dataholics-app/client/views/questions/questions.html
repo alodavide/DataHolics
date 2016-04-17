@@ -1,0 +1,178 @@
+<template name="Questions">
+	<div class="template-dashboard">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3">
+					{{> addQuestion}}
+					{{> favoritesSidebar}}
+				</div>
+				<div class="col-md-9">
+					{{> questions}}
+				</div>
+			</div>
+		</div>
+	</div>
+</template>
+
+<template name="addQuestion">
+	<div class="template-add-post">
+		<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">{{_ "add_question"}}</h3>
+				</div>
+				<div class="panel-body">
+					{{#autoForm id="add" collection="Questions" type="insert"}}
+					{{> afQuickField name="text"}}
+					{{> afQuickField name="classification"}}
+					{{> afQuickField name="code"}}
+					{{> afQuickField name="description"}}
+					{{> afQuickField name="dataType"}}
+                                        <button type="submit" class="btn btn-primary">{{_ "add_question_btn"}}</button>
+                                        {{/autoForm}}
+
+				</div>
+		</div>
+	</div>
+</template>
+
+<template name="questions">
+	<div class="template-posts">
+		{{#each  questions}}
+		{{> question}}
+		{{else}}
+		{{> noData}}
+		{{/each}}
+	</div>
+</template>
+
+<template name="question">
+  <div class="template-post">
+    <b>{{text}}</b>
+    {{classification}}<br/>
+    {{code}}<br />
+  </div>
+</template>
+
+<!--
+<template name="post">
+	<div class="template-post">
+		<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						{{title}}
+						<span class="pull-right">
+							<i class="fa fa-thumbs-up"></i> {{#with favoritesByDoc _id}}{{count}}{{/with}}
+							<i class="fa fa-comments"></i> {{commentCount _id}}
+						</span>
+					</h3>
+				</div>
+				<div class="panel-body">
+					<p class="text-center">
+						{{#with getDoc picture 'Attachments'}}
+							<img src="{{url}}" class="img-thumbnail img-rounded">
+							<a href="{{url}}">{{title}}</a>
+						{{/with}}
+					</p>
+					<div class="media">
+						<a class="pull-left" href="#">
+							{{> avatar userId=owner shape="circle"}}
+						</a>
+						<div class="media-body">
+							<p>{{content}}</p>
+							{{#if $eq owner User._id}}
+							<small>
+								{{#afModal title="Update post" omitFields="createdAt,updatedAt,owner" class="text-primary" collection="Posts" operation="update" doc=_id}}
+									<i class="fa fa-pencil" buttonContent="Edit form"></i> {{_ "edit_post"}}
+								{{/afModal}}
+								{{#afModal title="Delete post" class="text-danger" collection="Posts" operation="remove" doc=_id}}
+									<i class="fa fa-times" buttonContent="Edit form"></i> {{_ "delete"}}
+								{{/afModal}}
+
+									<i class="fa fa-book" buttonContent="Download form"></i> 
+						{{#with getDoc picture 'Attachments'}}
+							<a href="{{url}}">Download</a>
+						{{/with}}
+
+							</small>
+							{{/if}}
+						</div>
+					</div>
+				</div>
+				<div class="panel-footer">
+					{{> favoriteButton _id=_id}}
+					{{> commentFormToggle }}
+					{{> comments}}
+				</div>
+		</div>
+	</div>
+</template>
+
+<template name="xxpost">
+	<div class="template-post">
+		<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						{{title}}
+						<span class="pull-right">
+							<i class="fa fa-thumbs-up"></i> {{#with favoritesByDoc _id}}{{count}}{{/with}}
+							<i class="fa fa-comments"></i> {{commentCount _id}}
+						</span>
+					</h3>
+				</div>
+				<div class="panel-body">
+					<p class="text-center">
+						{{#with getDoc picture 'Attachments'}}
+							<img src="{{url}}" class="img-thumbnail img-rounded">
+							<a href="{{url}}">{{title}}</a>
+						{{/with}}
+					</p>
+					<div class="media">
+						<a class="pull-left" href="#">
+							{{> avatar userId=owner shape="circle"}}
+						</a>
+						<div class="media-body">
+							<p>{{content}}</p>
+							{{#if $eq owner User._id}}
+							<small>
+								{{#afModal title="Update post" omitFields="createdAt,updatedAt,owner" class="text-primary" collection="Posts" operation="update" doc=_id}}
+									<i class="fa fa-pencil" buttonContent="Edit post"></i> {{_ "edit_post"}}
+								{{/afModal}}
+								{{#afModal title="Delete post" class="text-danger" collection="Posts" operation="remove" doc=_id}}
+									<i class="fa fa-times" buttonContent="Edit post"></i> {{_ "delete"}}
+								{{/afModal}}
+							</small>
+							{{/if}}
+						</div>
+					</div>
+				</div>
+				<div class="panel-footer">
+					{{> favoriteButton _id=_id}}
+					{{> commentFormToggle }}
+					{{> comments}}
+				</div>
+		</div>
+	</div>
+</template>
+-->
+<!--
+<template name="favoritesSidebar">
+	<div class="template-favorites-sidebar">
+		{{#if myFavorites.count}}
+		<div class="panel panel-default">
+			<div class="panel-heading">
+					<h3 class="panel-title">{{_ "favorites"}}</h3>
+			</div>
+			<div class="panel-body">
+				<ul>
+				{{#each myFavorites}}
+					<li>
+						<a>{{_id}}</a>
+					</li>
+				{{/each}}
+				</ul>
+			</div>
+		</div>
+		{{/if}}
+	</div>
+</template>
+-->
