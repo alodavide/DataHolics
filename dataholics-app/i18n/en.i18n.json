@@ -43,11 +43,11 @@
 
 
 	/*Dashboard*/
-	"add_post": "Add a Post",
-	"add_post_btn": "Add Post",
+	"add_post": "Add a Form",
+	"add_post_btn": "Add Form",
 	"add_post_modal": "Add with a modal",
-	"add_post_modal_btn": "Add a new post",
-	"edit_post": "Edit post",
+	"add_post_modal_btn": "Add a new form",
+	"edit_post": "Edit form",
 	"delete": "Delete",
 	"favorites": "Favorites",
 
@@ -65,8 +65,8 @@
 	/*Posts*/
 
 	"postTitle": "Title",
-	"postContent": "Content",
-	"postPicture": "Picture",
+	"postContent": "Description",
+	"postPicture": "XLSForm",
 	// "uploadLabel": "Choose File"
 	"profilePicture": "Profile Picture"
 
