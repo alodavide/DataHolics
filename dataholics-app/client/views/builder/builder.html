@@ -1,0 +1,169 @@
+<template name="Builder">
+	<div class="template-dashboard">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3">
+<!--
+					{{> addQuestion}}
+					{{> favoritesSidebar}}
+-->
+				</div>
+				<div class="col-md-9">
+					{{> questions}}
+				</div>
+			</div>
+		</div>
+	</div>
+</template>
+
+    <template name="addQuestion">
+        <div class="template-add-post">
+            <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">{{_ "add_question"}}</h3>
+                    </div>
+                    <div class="panel-body">
+                        {{#autoForm id="add" collection="Questions" type="insert"}}
+                        {{> afQuickField name="text"}}
+                        {{> afQuickField name="classification"}}
+                        {{> afQuickField name="code"}}
+                        {{> afQuickField name="description"}}
+                        {{> afQuickField name="dataType"}}
+                                            <button type="submit" class="btn btn-primary">{{_ "add_question_btn"}}</button>
+                        {{/autoForm}}
+
+                    </div>
+            </div>
+        </div>
+    </template>
+
+<template name="questions">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title" style="margin:10px">
+                Search Box
+            <span style="float: right">
+                <input type="text" name="Search">
+                <button type="submit" class="btn btn-primary" style="margin-top: -5px">Search</button>
+            </span>
+            </h3>
+        </div>
+    </div>
+	<div class="template-posts">
+		{{#each  questions}}
+		{{> question}}
+		{{else}}
+		{{> noDataQuestions}}
+		{{/each}}
+	</div>
+</template>
+
+<!--
+<template name="question">
+      <div class="template-post">
+    <h1>QUESTION</h1>
+        <b>{{text}}</b>
+        {{classification}}<br/>
+        {{code}}<br />
+      </div>
+</template>
+
+-->
+
+
+
+
+<template name="question">
+	<div class="template-post">
+		<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						{{code}}: {{text}}
+<!--
+						<span class="pull-right">
+							<i class="fa fa-thumbs-up"></i> {{#with favoritesByDoc _id}}{{count}}{{/with}}
+							<i class="fa fa-comments"></i> {{commentCount _id}}
+						</span>
+-->
+					</h3>
+				</div>
+				<div class="panel-body">
+					<p class="text-center">
+<!--
+						{{#with getDoc picture 'Attachments'}}
+							<img src="{{url}}" class="img-thumbnail img-rounded">
+							<a href="{{url}}">{{title}}</a>
+						{{/with}}
+-->
+					</p>
+					<div class="media">
+<!--
+						<a class="pull-left" href="#">
+							{{> avatar userId=owner shape="circle"}}
+						</a>
+-->
+						<div class="media-body">
+                                                   Classification: {{classification}}<br/>
+                                                   Datatype: {{dataType}}<br/>
+						Description: {{description}}<br/>
+<!--
+							{{#if $eq owner User._id}}
+							<small>
+								{{#afModal title="Update post" omitFields="createdAt,updatedAt,owner" class="text-primary" collection="Posts" operation="update" doc=_id}}
+									<i class="fa fa-pencil" buttonContent="Edit form"></i> {{_ "edit_post"}}
+								{{/afModal}}
+								{{#afModal title="Delete post" class="text-danger" collection="Posts" operation="remove" doc=_id}}
+									<i class="fa fa-times" buttonContent="Edit form"></i> {{_ "delete"}}
+								{{/afModal}}
+
+									<i class="fa fa-book" buttonContent="Download form"></i> 
+						{{#with getDoc xlsform 'Attachments'}}
+							<a href="{{url}}">Download</a>
+						{{/with}}
+
+							</small>
+							{{/if}}
+-->
+						</div>
+					</div>
+				</div>
+				<div class="panel-footer">
+<!--
+					{{> includeButton _id=_id}}
+					{{> favoriteButton _id=_id}}
+					{{> commentFormToggle }}
+					{{> comments}}
+-->
+				</div>
+		</div>
+	</div>
+</template>
+
+<template name="xxincludeButton">
+ <script type="text/javascript">
+   var button_{{_id}} = 0;
+ </script> 
+  <a class="btn btn-default btn-sm js-favorite-button" 
+     onclick="if (button{{_id}} == 0) {this.className = 'btn btn-success btn-sm js-favorite-button'; button{{_id}} = 1} else {this.className = 'btn btn-default btn-sm js-favorite-button'; button_{{_id}} = 0}"><i class="fa fa-star"></i> Include question</a>
+	<a class="btn btn-default btn-sm js-favorite-button" doc="{{_id}}"><i class="fa fa-star-o"></i> Favorite</a>
+</template>
+
+<!--
+<template name="favoriteButton">
+-->
+<template name="includeButton">
+	{{#if isFavorite _id}}
+	{{> includeButtonFavorited _id=_id}}
+	{{else}}
+	{{> includeButtonNotFavorited}}
+	{{/if}}
+</template>
+
+<template name="includeButtonFavorited">
+	<a class="btn btn-success btn-sm js-favorite-button" doc="{{_id}}"><i class="fa fa-star"></i> Include question</a>
+</template>
+
+<template name="includeButtonNotFavorited">
+	<a class="btn btn-default btn-sm js-favorite-button" doc="{{_id}}"><i class="fa fa-star-o"></i> Include question</a>
+</template>
+

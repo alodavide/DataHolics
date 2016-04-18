@@ -13,4 +13,18 @@ Router.map ->
       ]
     data: ->
       posts: Posts.find({},{sort: {createdAt: -1}}).fetch()
-  
+
+  @route "questions",
+    path: "/questions"
+    waitOn: ->
+      subs.subscribe 'questions'
+    data: ->
+      questions: Questions.find({},{sort: {createdAt: -1}}).fetch()
+
+  @route "builder",
+    path: "/builder"
+    waitOn: ->
+      subs.subscribe 'questions'
+    data: ->
+      questions: Questions.find({},{sort: {createdAt: -1}}).fetch()
+

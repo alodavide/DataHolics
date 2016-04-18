@@ -31,8 +31,10 @@
         <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
             {{#if User}}
-              {{> notificationsDropdown}}
-              {{#if isInRole 'admin'}}
+                {{> notificationsDropdown}}
+                <li><a href="/questions">Question</a></li>
+                <li><a href="/dashboard">Form</a></li>
+                {{#if isInRole 'admin'}}
                 <li><a href="{{pathFor 'adminDashboard'}}">{{_ "admin"}}</a></li>
               {{/if}}
               {{> userDropdown}}

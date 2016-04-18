@@ -5,12 +5,6 @@ Router.map ->
   @route "account",
     path: "/account"
 
-  @route "questions",
-    path: "/questions"
-    data: ->
-      questions: Questions.find({},{sort: {createdAt: -1}}).fetch()
-  
-
   @route "setUserName",
     path: "/setUserName"
     onBeforeAction: ->
