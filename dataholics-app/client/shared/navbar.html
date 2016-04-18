@@ -14,6 +14,7 @@
                 <div class="list-group">
                   <a class="list-group-item" href="{{pathFor 'profile'}}">{{_ "profile"}}</a>
                   <a class="list-group-item" href="{{pathFor 'account'}}">{{_ "account"}}</a>
+                  <a class="list-group-item" href="{{pathFor 'questions'}}">{{_ "questions"}}</a>
                   <a class="list-group-item" href="{{pathFor 'notifications'}}">
                     {{#if notificationCount}}
                       <span class="badge bg-success">{{notificationCount}}</span>
@@ -37,6 +38,10 @@
               {{> userDropdown}}
               <li class="visible-xs">
                 <a href="{{pathFor 'profile'}}" class="close-navbar">{{_ "edit_profile"}}</a>
+              </li>
+
+              <li class="visible-xs">
+                  <a class="list-group-item" href="{{pathFor 'questions'}}">{{_ "questions"}}</a>
               </li>
               <li class="visible-xs">
                 <a class="close-navbar" href="/sign-out">{{_ "signout"}}</a>

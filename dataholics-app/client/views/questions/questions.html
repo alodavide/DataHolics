@@ -37,6 +37,7 @@
 
 <template name="questions">
 	<div class="template-posts">
+<h2>Showing questions...</h2>
 		{{#each  questions}}
 		{{> question}}
 		{{else}}
@@ -47,6 +48,7 @@
 
 <template name="question">
   <div class="template-post">
+<h1>QUESTION</h1>
     <b>{{text}}</b>
     {{classification}}<br/>
     {{code}}<br />

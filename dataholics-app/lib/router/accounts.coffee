@@ -5,6 +5,9 @@ Router.map ->
   @route "account",
     path: "/account"
 
+  @route "questions",
+    path: "/questions"
+
   @route "setUserName",
     path: "/setUserName"
     onBeforeAction: ->

@@ -23,7 +23,7 @@ Schemas.Posts = new SimpleSchema
 			if this.isUpdate
 				new Date()
 
-	picture:
+	xlsform:
 		type: String
 		autoform:
 			afFieldInput:

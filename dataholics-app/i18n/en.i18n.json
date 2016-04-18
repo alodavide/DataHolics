@@ -31,6 +31,7 @@
 	"admin": "Admin",
 	"profile": "Profile",
 	"account": "Account",
+	"questions": "Questions",
 	"signout": "Sign out",
 	"signup": "Sign up",
 	"login": "Log in",
@@ -50,6 +51,10 @@
 	"edit_post": "Edit form",
 	"delete": "Delete",
 	"favorites": "Favorites",
+
+        /* Questions */
+        "add_question": "Add a question",
+	"add_question_btn": "Add question",
 
 	/*Account*/
 	"account_details": "Account Details",
