@@ -9,6 +9,14 @@
 				{ label: 'Title', name: 'title' }
 				{ label: 'User', name: 'author()', template: 'adminUserCell' }
 			]
+		Questions:
+			color: 'blue'
+			icon: 'pencil'
+			extraFields: ['owner']
+			tableColumns: [
+				{ label: 'Text', name: 'text' }
+				{ label: 'User', name: 'author()', template: 'adminUserCell' }
+			]
 		Comments:
 			color: 'green'
 			icon: 'comments'
