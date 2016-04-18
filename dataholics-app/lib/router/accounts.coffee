@@ -9,6 +9,7 @@ Router.map ->
     path: "/questions"
     data: ->
       questions: Questions.find({},{sort: {createdAt: -1}}).fetch()
+  
 
   @route "setUserName",
     path: "/setUserName"

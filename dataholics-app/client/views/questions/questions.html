@@ -37,11 +37,9 @@
 
 <template name="questions">
 	<div class="template-posts">
-<h2>Showing questions...</h2>
-		{{#each  questions}}
+		{{#each  question in Questions}}
 		{{> question}}
 		{{else}}
-		{{> noData}}
 		{{/each}}
 	</div>
 </template>
