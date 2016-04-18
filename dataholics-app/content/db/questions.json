@@ -1,0 +1,9 @@
+
+db.questions.insert({
+  "text" : "Do you have electricity available in your home", 
+  "code" : "OGH2016_svc_electricity", 
+  "description" : "Are one ore more reliable electrical connections available within the household",
+  "classification" : "person centric", 
+  "dataType" : "yes-no" 
+}); 
+
