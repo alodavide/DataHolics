@@ -1,13 +1,13 @@
 {
 
 	/*Config*/
-	"configName": "My App",
-	"configTitle": "Make Meteor Apps. Fast.",
-	"configSubtitle": "Create beautiful and functioning Meteor apps really quick",
+	"configName": "Survey Central",
+	"configTitle": "For consistent, reliable data, use and reuse tried and tested questions, response lists and forms.",
+	"configSubtitle": "Browse Survey Centrall and build your own survey from this library.",
 	
 	/*Home*/
-	"getstarted": "Get Started",
-	"dashboard": "Go to dashboard",
+	"getstarted": "Start your Survey",
+	"dashboard": "Start your Survey",
 	"learn": "Learn more",
 	"intro": "Make Meteor Apps. Fast.",
 	"how": "How It Works",
