@@ -14,8 +14,10 @@
 			icon: 'pencil'
 			extraFields: ['owner']
 			tableColumns: [
-				{ label: 'Text', name: 'text' }
-				{ label: 'User', name: 'author()', template: 'adminUserCell' }
+				{ label: 'Classification', name: 'classification' }
+				{ label: 'Code', name: 'code' }
+				{ label: 'Question', name: 'text' }
+				{ label: 'Response Type', name: 'dataType' }
 			]
 		Comments:
 			color: 'green'
