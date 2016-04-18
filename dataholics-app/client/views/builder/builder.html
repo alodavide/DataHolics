@@ -3,10 +3,8 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-3">
-<!--
-					{{> addQuestion}}
-					{{> favoritesSidebar}}
--->
+
+					{{> filter}}
 				</div>
 				<div class="col-md-9">
 					{{> bdquestions}}
@@ -15,29 +13,22 @@
 		</div>
 	</div>
 </template>
-
-<!--
-    <template name="addQuestion">
+    <template name="filter">
         <div class="template-add-post">
             <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">{{_ "add_question"}}</h3>
+                        <h3 class="panel-title">Filter</h3>
                     </div>
                     <div class="panel-body">
-                        {{#autoForm id="add" collection="Questions" type="insert"}}
-                        {{> afQuickField name="text"}}
-                        {{> afQuickField name="classification"}}
-                        {{> afQuickField name="code"}}
-                        {{> afQuickField name="description"}}
-                        {{> afQuickField name="dataType"}}
-                                            <button type="submit" class="btn btn-primary">{{_ "add_question_btn"}}</button>
-                        {{/autoForm}}
-
+                        <button type="submit" class="btn btn-primary" style="width: 220px; margin: 5px">Classification</button>
+                        <button type="submit" class="btn btn-danger" style="width: 220px; margin: 5px">Health</button>
+                        <button type="submit" class="btn btn-danger" style="width: 220px; margin: 5px">Disaster</button>
+                        <button type="submit" class="btn btn-primary" style="width: 220px; margin: 5px">Organizations</button>
                     </div>
             </div>
         </div>
     </template>
--->
+
 
 <template name="bdquestions">
     <div class="panel panel-default">
