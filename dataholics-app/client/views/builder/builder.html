@@ -9,13 +9,14 @@
 -->
 				</div>
 				<div class="col-md-9">
-					{{> questions}}
+					{{> bdquestions}}
 				</div>
 			</div>
 		</div>
 	</div>
 </template>
 
+<!--
     <template name="addQuestion">
         <div class="template-add-post">
             <div class="panel panel-default">
@@ -36,8 +37,9 @@
             </div>
         </div>
     </template>
+-->
 
-<template name="questions">
+<template name="bdquestions">
     <div class="panel panel-default">
         <div class="panel-heading">
             <h3 class="panel-title" style="margin:10px">
@@ -51,11 +53,22 @@
     </div>
 	<div class="template-posts">
 		{{#each  questions}}
-		{{> question}}
+		{{> bdquestion}}
 		{{else}}
 		{{> noDataQuestions}}
 		{{/each}}
 	</div>
+	<div class="template-post">
+		<div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title" style="margin:10px">
+              Download this seed form
+            <span style="float: right">
+                <button type="submit" class="btn btn-primary" style="margin-top: -5px" onclick="window.open('/img/Survey4.xlsx')">Download</button>
+            </span>
+            </h3>
+         </div>
+</div></div>
 </template>
 
 <!--
@@ -73,7 +86,7 @@
 
 
 
-<template name="question">
+<template name="bdquestion">
 	<div class="template-post">
 		<div class="panel panel-default">
 				<div class="panel-heading">
@@ -128,9 +141,11 @@
 					</div>
 				</div>
 				<div class="panel-footer">
-<!--
 					{{> includeButton _id=_id}}
+<!--
 					{{> favoriteButton _id=_id}}
+-->
+<!--
 					{{> commentFormToggle }}
 					{{> comments}}
 -->
@@ -139,31 +154,30 @@
 	</div>
 </template>
 
-<template name="xxincludeButton">
- <script type="text/javascript">
-   var button_{{_id}} = 0;
- </script> 
-  <a class="btn btn-default btn-sm js-favorite-button" 
-     onclick="if (button{{_id}} == 0) {this.className = 'btn btn-success btn-sm js-favorite-button'; button{{_id}} = 1} else {this.className = 'btn btn-default btn-sm js-favorite-button'; button_{{_id}} = 0}"><i class="fa fa-star"></i> Include question</a>
-	<a class="btn btn-default btn-sm js-favorite-button" doc="{{_id}}"><i class="fa fa-star-o"></i> Favorite</a>
+
+<template name="includeButton">
+<button type="button" class="btn btn-default" data-toggle="button" aria-pressed="false" autocomplete="off">
+  Include question
+</button>
+<!--
+  <a class="noincl btn btn-default btn-sm js-favorite-button" doc="{{_id}}" onclick="if (this.className.starsWith('noincl')) this.className='incl btn btn-success btn-sm js-favorite-button'; else this.className='noincl btn btn-default btn-sm js-favorite-button';"><i class="fa fa-star"></i> Include question</a>
+-->
 </template>
 
 <!--
 <template name="favoriteButton">
--->
-<template name="includeButton">
 	{{#if isFavorite _id}}
-	{{> includeButtonFavorited _id=_id}}
+	{{> favoriteButtonFavorited _id=_id}}
 	{{else}}
-	{{> includeButtonNotFavorited}}
+	{{> favoriteButtonNotFavorited}}
 	{{/if}}
 </template>
 
-<template name="includeButtonFavorited">
-	<a class="btn btn-success btn-sm js-favorite-button" doc="{{_id}}"><i class="fa fa-star"></i> Include question</a>
+<template name="favoriteButtonFavorited">
+	<a class="btn btn-primary btn-sm js-favorite-button" doc="{{_id}}"><i class="fa fa-star"></i> Favorite</a>
 </template>
 
-<template name="includeButtonNotFavorited">
-	<a class="btn btn-default btn-sm js-favorite-button" doc="{{_id}}"><i class="fa fa-star-o"></i> Include question</a>
+<template name="favoriteButtonNotFavorited">
+	<a class="btn btn-default btn-sm js-favorite-button" doc="{{_id}}"><i class="fa fa-star-o"></i> Favorite</a>
 </template>
-
+-->

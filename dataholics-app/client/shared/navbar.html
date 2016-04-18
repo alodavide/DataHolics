@@ -34,12 +34,17 @@
                 {{> notificationsDropdown}}
                 <li><a href="/questions">Question</a></li>
                 <li><a href="/dashboard">Form</a></li>
+		<li><a href="/builder">Builder</a></li>
                 {{#if isInRole 'admin'}}
                 <li><a href="{{pathFor 'adminDashboard'}}">{{_ "admin"}}</a></li>
               {{/if}}
               {{> userDropdown}}
               <li class="visible-xs">
                 <a href="{{pathFor 'profile'}}" class="close-navbar">{{_ "edit_profile"}}</a>
+              </li>
+
+              <li class="visible-xs">
+                  <a class="list-group-item" href="{{pathFor 'builder'}}">{{_ "builder"}}</a>
               </li>
 
               <li class="visible-xs">
