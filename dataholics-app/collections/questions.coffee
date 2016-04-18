@@ -50,8 +50,6 @@ Schemas.Questions = new SimpleSchema
 Questions.attachSchema(Schemas.Questions)
 
 Questions.helpers 
-	questions: Questions.find({})
-
 	author: ->
 		user = Meteor.users.findOne(@owner)
 		if user?.profile?.firstName? and user?.profile?.lastName
